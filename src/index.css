@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF8F5;
+  --color-cream-dark: #F1EEE8;
+  --color-cream-darker: #E8E4DC;
+  --color-warm-white: #F7F5F0;
+  --color-card: #F1EEE8;
+  --color-card-hover: #E8E4DC;
+  --color-ink: #1A202C;
+  --color-ink-light: #302B2C;
+  --color-ink-muted: #61604E;
+  --color-ink-faint: #A09E96;
+  --color-amber: #B7791F;
+  --color-amber-light: #E8C08C;
+  --color-amber-bg: #FFF8ED;
+  --color-green: #2D6A4F;
+  --color-green-light: #D4EDDA;
+  --color-green-bg: #F0FFF4;
+  --color-red-muted: #9B2C2C;
+  --color-red-bg: #FFF5F5;
+  --color-border: #E8E4DC;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--color-amber-light);
+  color: var(--color-ink);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
