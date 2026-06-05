@@ -34,7 +34,7 @@ export const mockUser = {
   },
   lastSettledRound: "quarterfinal",
   nextRound: { name: "Semifinals", date: "Jul 8–9" },
-  estimatedPrize: { performance: 4320, licensed: 46 },
+  estimatedPrize: { performance: 2160, licensed: 23 },
 };
 
 export const credentialsList = [
@@ -124,7 +124,7 @@ export const campaignSteps = [
   {
     number: 5,
     title: "Compete & Climb",
-    description: "Your fund auto-tracks the World Cup bracket. As rounds settle, your ROI updates. Climb the rankings to claim your share of the $20,000 USDC prize pool.",
+    description: "Your fund auto-tracks the World Cup bracket. As rounds settle, your ROI updates. Climb the rankings to claim your share of the $10,000 USDT prize pool.",
     tab: "rankings",
   },
 ];
@@ -173,22 +173,30 @@ export const explorerIndexes = [
 ];
 
 export const leaderboard = [
-  { rank: 1, fundName: "Tango Capital", squad: "\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E9}\u{1F1EA}", roi: 52.3, depositMult: 3.0, explorerMult: 2.0, prize: 10826 },
-  { rank: 2, fundName: "Les Bleus Fund", squad: "\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E9}\u{1F1EA}\u{1F1F3}\u{1F1F1}\u{1F1F5}\u{1F1F9}", roi: 45.1, depositMult: 2.0, explorerMult: 1.5, prize: 5940 },
-  { rank: 3, fundName: "Samba Dream Team", squad: "\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1F5}\u{1F1F9}\u{1F1E9}\u{1F1EA}", roi: 41.8, depositMult: 2.0, explorerMult: 1.5, prize: 4320, isUser: true },
-  { rank: 4, fundName: "La Roja Ventures", squad: "\u{1F1EA}\u{1F1F8}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1FA}\u{1F1FE}", roi: 38.5, depositMult: 1.5, explorerMult: 1.25, prize: 2700 },
-  { rank: 5, fundName: "Host Town Heroes", squad: "\u{1F1FA}\u{1F1F8}\u{1F1F2}\u{1F1FD}\u{1F1E8}\u{1F1E6}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}", roi: 35.2, depositMult: 1.0, explorerMult: 2.0, prize: 2000 },
-  { rank: 6, fundName: "Nordic Edge", squad: "\u{1F1F3}\u{1F1F4}\u{1F1F3}\u{1F1F1}\u{1F1E9}\u{1F1EA}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}", roi: 31.7, depositMult: 2.0, explorerMult: 1.0, prize: 1600 },
-  { rank: 7, fundName: "CR7 & Friends", squad: "\u{1F1F5}\u{1F1F9}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E6}\u{1F1F7}", roi: 28.4, depositMult: 1.5, explorerMult: 1.25, prize: 1500 },
-  { rank: 8, fundName: "Vault Street Bets", squad: "\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1FA}\u{1F1FE}\u{1F1E8}\u{1F1F4}\u{1F1EA}\u{1F1E8}", roi: 25.1, depositMult: 1.0, explorerMult: 1.5, prize: 1200 },
-  { rank: 9, fundName: "Three Lions Fund", squad: "\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}\u{1F1EB}\u{1F1F7}\u{1F1E9}\u{1F1EA}\u{1F1F3}\u{1F1F1}\u{1F1EA}\u{1F1F8}", roi: 22.6, depositMult: 0.8, explorerMult: 1.0, prize: 640 },
-  { rank: 10, fundName: "Maple Leaf Capital", squad: "\u{1F1E8}\u{1F1E6}\u{1F1FA}\u{1F1F8}\u{1F1F2}\u{1F1FD}\u{1F1E7}\u{1F1F7}\u{1F1E6}\u{1F1F7}", roi: 19.3, depositMult: 1.5, explorerMult: 1.25, prize: 1500 },
+  { rank: 1, fundName: "Tango Capital", squad: "\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E9}\u{1F1EA}", roi: 52.3, depositMult: 3.0, explorerMult: 2.0, prize: 5413 },
+  { rank: 2, fundName: "Les Bleus Fund", squad: "\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E9}\u{1F1EA}\u{1F1F3}\u{1F1F1}\u{1F1F5}\u{1F1F9}", roi: 45.1, depositMult: 2.0, explorerMult: 1.5, prize: 2970 },
+  { rank: 3, fundName: "Samba Dream Team", squad: "\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1F5}\u{1F1F9}\u{1F1E9}\u{1F1EA}", roi: 41.8, depositMult: 2.0, explorerMult: 1.5, prize: 2160, isUser: true },
+  { rank: 4, fundName: "La Roja Ventures", squad: "\u{1F1EA}\u{1F1F8}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1FA}\u{1F1FE}", roi: 38.5, depositMult: 1.5, explorerMult: 1.25, prize: 1350 },
+  { rank: 5, fundName: "Host Town Heroes", squad: "\u{1F1FA}\u{1F1F8}\u{1F1F2}\u{1F1FD}\u{1F1E8}\u{1F1E6}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}", roi: 35.2, depositMult: 1.0, explorerMult: 2.0, prize: 1000 },
+  { rank: 6, fundName: "Nordic Edge", squad: "\u{1F1F3}\u{1F1F4}\u{1F1F3}\u{1F1F1}\u{1F1E9}\u{1F1EA}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}", roi: 31.7, depositMult: 2.0, explorerMult: 1.0, prize: 800 },
+  { rank: 7, fundName: "CR7 & Friends", squad: "\u{1F1F5}\u{1F1F9}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E6}\u{1F1F7}", roi: 28.4, depositMult: 1.5, explorerMult: 1.25, prize: 750 },
+  { rank: 8, fundName: "Vault Street Bets", squad: "\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1FA}\u{1F1FE}\u{1F1E8}\u{1F1F4}\u{1F1EA}\u{1F1E8}", roi: 25.1, depositMult: 1.0, explorerMult: 1.5, prize: 600 },
+  { rank: 9, fundName: "Three Lions Fund", squad: "\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}\u{1F1EB}\u{1F1F7}\u{1F1E9}\u{1F1EA}\u{1F1F3}\u{1F1F1}\u{1F1EA}\u{1F1F8}", roi: 22.6, depositMult: 0.8, explorerMult: 1.0, prize: 320 },
+  { rank: 10, fundName: "Maple Leaf Capital", squad: "\u{1F1E8}\u{1F1E6}\u{1F1FA}\u{1F1F8}\u{1F1F2}\u{1F1FD}\u{1F1E7}\u{1F1F7}\u{1F1E6}\u{1F1F7}", roi: 19.3, depositMult: 1.5, explorerMult: 1.25, prize: 750 },
+];
+
+// Base prize share by final rank (#1–#20), used by the Multiplier Calculator.
+// Estimated prize = basePrizeShares[rank - 1] × Combined Multiplier.
+// Halved for the $10,000 USDT pool (was scaled for $20,000).
+export const basePrizeShares = [
+  1500, 1100, 800, 600, 500, 400, 400, 400, 400, 400,
+  150, 150, 150, 150, 150, 150, 150, 150, 150, 150,
 ];
 
 export const faqItems = [
   {
     question: "How do credentials work?",
-    answer: "Complete 6 on-chain and social tasks to earn your Manager Credentials. Each credential is verified automatically. Earning all 6 makes you a Licensed Manager, qualifying you for the Licensed Pool ($4,000 USDC) on top of the Performance Pool.",
+    answer: "Complete 6 on-chain and social tasks to earn your Manager Credentials. Each credential is verified automatically. Earning all 6 makes you a Licensed Manager, qualifying you for the Licensed Pool ($2,000 USDT) on top of the Performance Pool.",
   },
   {
     question: "How are multipliers calculated?",
@@ -196,7 +204,7 @@ export const faqItems = [
   },
   {
     question: "How is the prize pool distributed?",
-    answer: "The $20,000 USDC pool splits into Performance ($16,000) and Licensed ($4,000). Performance prizes are ranked by ROI and weighted by your Combined Multiplier. Licensed prizes are split equally among all managers who complete 6/6 credentials.",
+    answer: "The $10,000 USDT pool splits into Performance ($8,000) and Licensed ($2,000). Performance prizes are ranked by ROI and weighted by your Combined Multiplier. Licensed prizes are split equally among all managers who complete 6/6 credentials.",
   },
   {
     question: "What happens each round?",

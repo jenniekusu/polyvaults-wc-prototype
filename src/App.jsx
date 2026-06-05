@@ -6,6 +6,7 @@ import {
   wcIndexes,
   explorerIndexes,
   leaderboard,
+  basePrizeShares,
   faqItems,
 } from "./data/mockData";
 
@@ -104,7 +105,7 @@ function HeroBanner() {
             </h1>
             <p className="text-ink-muted text-sm mt-1 max-w-lg">
               Name your fund. Earn your credentials. Pick your squad. Compete for{" "}
-              <span className="text-amber font-semibold">$20,000 USDC</span>.
+              <span className="text-amber font-semibold">$10,000 USDT</span>.
             </p>
           </div>
           <div className="flex flex-col items-start md:items-end gap-1.5 shrink-0">
@@ -113,7 +114,7 @@ function HeroBanner() {
               <CountdownInline targetDate="2026-07-19T00:00:00Z" label="Final" />
             </div>
             <div className="text-[11px] text-ink-faint">
-              🏆 Performance $16,000 · 🎖 Licensed $4,000
+              🏆 Performance $8,000 · 🎖 Licensed $2,000
             </div>
           </div>
         </div>
@@ -215,7 +216,7 @@ function IntroTab({ onNavigate }) {
         <p className="text-ink-muted text-sm mt-1 max-w-2xl">
           The Football Manager World Cup is a 5-week campaign running alongside FIFA World Cup 2026.
           You play as a fund manager — pick teams, track their performance, earn credentials, and
-          compete for a share of the <span className="text-amber font-semibold">$20,000 USDC</span> prize pool.
+          compete for a share of the <span className="text-amber font-semibold">$10,000 USDT</span> prize pool.
         </p>
       </div>
 
@@ -286,7 +287,7 @@ function IntroTab({ onNavigate }) {
         <div>
           <p className="font-serif text-lg font-semibold">Ready to compete?</p>
           <p className="text-cream/60 text-sm mt-0.5">
-            Complete all credentials to unlock the full $20,000 prize pool.
+            Complete all credentials to unlock the full $10,000 prize pool.
           </p>
         </div>
         <button
@@ -599,17 +600,21 @@ function CalculatorTab() {
   const [deposit, setDeposit] = useState(500);
   const [indexes, setIndexes] = useState(2);
 
+  const EXAMPLE_RANK = 5; // estimated prize is illustrated for a #5 finish
+
   const calc = useMemo(() => {
+    // Deposit ladder values 1.0 / 1.5 / 2.0 / 3.0 (unchanged)
     let depMult;
-    if (deposit >= 1000) depMult = 3.0;
-    else if (deposit >= 500) depMult = 2.0;
-    else if (deposit >= 200) depMult = 1.5;
-    else if (deposit >= 100) depMult = 1.0;
-    else depMult = 0.5;
+    if (deposit >= 5000) depMult = 3.0;
+    else if (deposit >= 1000) depMult = 2.0;
+    else if (deposit >= 100) depMult = 1.5;
+    else depMult = 1.0;
     const expMap = { 1: 1.0, 2: 1.25, 3: 1.5, 4: 2.0 };
     const expMult = expMap[indexes] || 1.0;
     const combined = depMult * expMult;
-    return { depMult, expMult, combined, estimated: 1000 * combined };
+    const baseShare = basePrizeShares[EXAMPLE_RANK - 1]; // #5 → 500
+    const estimated = Math.round(baseShare * combined);
+    return { depMult, expMult, combined, estimated, baseShare };
   }, [deposit, indexes]);
 
   return (
@@ -659,7 +664,7 @@ function CalculatorTab() {
           ))}
         </div>
         <p className="text-center text-xs text-ink-faint">
-          Rank #5 estimated: <span className="text-amber font-medium">${calc.estimated.toLocaleString()}</span> (base $1,000 × {calc.combined.toFixed(2)})
+          If you rank #5, your estimated prize: <span className="text-amber font-medium">${calc.estimated.toLocaleString()}</span> (base ${calc.baseShare.toLocaleString()} × {calc.combined.toFixed(3)})
         </p>
       </div>
     </div>
