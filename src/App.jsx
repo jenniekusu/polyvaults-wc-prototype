@@ -617,6 +617,10 @@ function CalculatorTab() {
     return { depMult, expMult, combined, estimated, baseShare };
   }, [deposit, indexes]);
 
+  // Trim trailing zeros so every multiplier reads consistently
+  // (1.5, 1.25, 1.875 — not 1.50 / 1.88). Keeps the displayed math self-consistent.
+  const fmt = (n) => n.toFixed(3).replace(/\.?0+$/, "");
+
   return (
     <div className="max-w-xl mx-auto">
       <div className="text-center mb-6">
@@ -650,9 +654,9 @@ function CalculatorTab() {
         </div>
         <div className="grid grid-cols-4 gap-3 mb-4">
           {[
-            { label: "Deposit", value: `💰×${calc.depMult}` },
-            { label: "Explorer", value: `🌍×${calc.expMult}` },
-            { label: "Combined", value: `×${calc.combined.toFixed(2)}`, accent: true },
+            { label: "Deposit", value: `💰×${fmt(calc.depMult)}` },
+            { label: "Explorer", value: `🌍×${fmt(calc.expMult)}` },
+            { label: "Combined", value: `×${fmt(calc.combined)}`, accent: true },
             { label: "Est. Prize", value: `$${calc.estimated.toLocaleString()}`, gold: true },
           ].map((item) => (
             <div key={item.label} className="text-center py-3 rounded-xl bg-warm-white">
@@ -664,7 +668,7 @@ function CalculatorTab() {
           ))}
         </div>
         <p className="text-center text-xs text-ink-faint">
-          If you rank #5, your estimated prize: <span className="text-amber font-medium">${calc.estimated.toLocaleString()}</span> (base ${calc.baseShare.toLocaleString()} × {calc.combined.toFixed(3)})
+          If you rank #5, your estimated prize: <span className="text-amber font-medium">${calc.estimated.toLocaleString()}</span> (base ${calc.baseShare.toLocaleString()} × {fmt(calc.combined)})
         </p>
       </div>
     </div>
