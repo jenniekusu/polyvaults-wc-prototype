@@ -200,7 +200,7 @@ export const faqItems = [
   },
   {
     question: "How are multipliers calculated?",
-    answer: "Deposit Multiplier scales with your deposit size (e.g., $500 = 2.0×). Explorer Multiplier grows as you participate in more Indexes: 1 = 1.0×, 2 = 1.25×, 3 = 1.5×, 4 = 2.0×. Your Combined Multiplier is Deposit × Explorer, applied to your base prize allocation.",
+    answer: "Deposit Multiplier scales with your deposit size (e.g., $500 = 1.5×). Explorer Multiplier grows as you participate in more Indexes: 1 = 1.0×, 2 = 1.25×, 3 = 1.5×, 4 = 2.0×. Your Combined Multiplier is Deposit × Explorer, applied to your base prize allocation.",
   },
   {
     question: "How is the prize pool distributed?",
