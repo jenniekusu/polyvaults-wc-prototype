@@ -5,9 +5,9 @@ export const mockUser = {
   roiPct: 23.0,
   rank: 3,
   totalParticipants: 1200,
-  depositMultiplier: 2.0,
-  explorerMultiplier: 1.5,
-  combinedMultiplier: 3.0,
+  depositMultiplier: 1.5, // $500 deposit → 1.5× (deposit ladder)
+  explorerMultiplier: 1.25, // 2 participating indexes → 1.25× (explorer ladder)
+  combinedMultiplier: 1.875, // deposit × explorer = 1.5 × 1.25
   wcIndexChoice: "custom",
   squad: [
     { code: "BRA", name: "Brazil", flag: "\u{1F1E7}\u{1F1F7}", alive: true },
@@ -175,7 +175,7 @@ export const explorerIndexes = [
 export const leaderboard = [
   { rank: 1, fundName: "Tango Capital", squad: "\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E9}\u{1F1EA}", roi: 52.3, depositMult: 3.0, explorerMult: 2.0, prize: 5413 },
   { rank: 2, fundName: "Les Bleus Fund", squad: "\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}\u{1F1E9}\u{1F1EA}\u{1F1F3}\u{1F1F1}\u{1F1F5}\u{1F1F9}", roi: 45.1, depositMult: 2.0, explorerMult: 1.5, prize: 2970 },
-  { rank: 3, fundName: "Samba Dream Team", squad: "\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1F5}\u{1F1F9}\u{1F1E9}\u{1F1EA}", roi: 41.8, depositMult: 2.0, explorerMult: 1.5, prize: 2160, isUser: true },
+  { rank: 3, fundName: "Samba Dream Team", squad: "\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1F5}\u{1F1F9}\u{1F1E9}\u{1F1EA}", roi: 41.8, depositMult: 1.5, explorerMult: 1.25, prize: 2160, isUser: true },
   { rank: 4, fundName: "La Roja Ventures", squad: "\u{1F1EA}\u{1F1F8}\u{1F1EB}\u{1F1F7}\u{1F1E6}\u{1F1F7}\u{1F1E7}\u{1F1F7}\u{1F1FA}\u{1F1FE}", roi: 38.5, depositMult: 1.5, explorerMult: 1.25, prize: 1350 },
   { rank: 5, fundName: "Host Town Heroes", squad: "\u{1F1FA}\u{1F1F8}\u{1F1F2}\u{1F1FD}\u{1F1E8}\u{1F1E6}\u{1F1E7}\u{1F1F7}\u{1F1EB}\u{1F1F7}", roi: 35.2, depositMult: 1.0, explorerMult: 2.0, prize: 1000 },
   { rank: 6, fundName: "Nordic Edge", squad: "\u{1F1F3}\u{1F1F4}\u{1F1F3}\u{1F1F1}\u{1F1E9}\u{1F1EA}\u{1F1EB}\u{1F1F7}\u{1F1EA}\u{1F1F8}", roi: 31.7, depositMult: 2.0, explorerMult: 1.0, prize: 800 },
