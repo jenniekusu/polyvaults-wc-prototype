@@ -204,7 +204,7 @@ export const faqItems = [
   },
   {
     question: "How is the prize pool distributed?",
-    answer: "The $10,000 USDT pool splits into Performance ($8,000) and Licensed ($2,000). Performance prizes are ranked by ROI and weighted by your Combined Multiplier. Licensed prizes are split equally among all managers who complete 6/6 credentials.",
+    answer: "The $10,000 USDT pool splits into Performance ($8,000, top 20 by ROI) and Licensed ($2,000, all 6/6 managers). Performance prizes use a per-rank base allocation × your Combined Multiplier (Deposit × Explorer), then scale proportionally so the pool always totals $8,000. Licensed prizes are shared among all Licensed Managers, weighted by each manager's Deposit Multiplier (not an even split).",
   },
   {
     question: "What happens each round?",

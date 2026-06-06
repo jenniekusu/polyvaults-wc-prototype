@@ -603,12 +603,15 @@ function CalculatorTab() {
   const EXAMPLE_RANK = 5; // estimated prize is illustrated for a #5 finish
 
   const calc = useMemo(() => {
-    // Deposit ladder values 1.0 / 1.5 / 2.0 / 3.0 (unchanged)
+    // Deposit Multiplier tiers per campaign plan §4.1:
+    //   <$100 → proportional (deposit ÷ 100, e.g. $80 → 0.8×)
+    //   $100–499 → 1.0× · $500–999 → 1.5× · $1k–4.9k → 2.0× · $5k+ → 3.0×
     let depMult;
     if (deposit >= 5000) depMult = 3.0;
     else if (deposit >= 1000) depMult = 2.0;
-    else if (deposit >= 100) depMult = 1.5;
-    else depMult = 1.0;
+    else if (deposit >= 500) depMult = 1.5;
+    else if (deposit >= 100) depMult = 1.0;
+    else depMult = deposit / 100;
     const expMap = { 1: 1.0, 2: 1.25, 3: 1.5, 4: 2.0 };
     const expMult = expMap[indexes] || 1.0;
     const combined = depMult * expMult;
